@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#070709">
+<title>Vexora Studio — We Build Websites That Grow Businesses</title>
+<meta name="description" content="Independent digital studio creating refined, high-impact digital experiences and bespoke websites for ambitious brands.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@600;700&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+:root {
+  --bg: #070709;
+  --bg-elevated: #0e0e13;
+  --bg-card: #111117;
+  --white: #f5f5f7;
+  --muted: #8e8e98;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-bright: rgba(255, 255, 255, 0.18);
+  --purple: #9b4dff;
+  --blue: #4f7cff;
+  --cyan: #38d9ff;
+  --grad-text: linear-gradient(90deg, #b565ff 0%, #5e8bff 52%, #3be0ff 100%);
+  --font-display: 'Oswald', 'Tajawal', sans-serif;
+  --font-body: 'Inter', 'Tajawal', sans-serif;
+}
+
+[dir="rtl"] {
+  --font-display: 'Tajawal', sans-serif;
+  --font-body: 'Tajawal', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  background-image: 
+    radial-gradient(circle at 75% 32%, rgba(115, 65, 235, 0.14) 0%, rgba(35, 95, 210, 0.06) 28%, transparent 58%),
+    radial-gradient(circle at 15% 85%, rgba(79, 124, 255, 0.06) 0%, transparent 45%);
+  color: var(--white);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.wrap {
+  width: min(1340px, calc(100% - 64px));
+  margin: 0 auto;
+}
+
+/* Header */
+header {
+  height: 92px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 50;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-icon {
+  width: 38px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.brand-wordmark {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.brand-wordmark strong {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+
+.brand-wordmark span {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 3px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.brand-wordmark span::before,
+.brand-wordmark span::after {
+  content: "";
+  width: 10px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 38px;
+}
+
+.nav a {
+  font-size: 13px;
+  font-weight: 400;
+  color: #b4b4be;
+  transition: color 0.25s ease;
+}
+
+.nav a:hover {
+  color: #ffffff;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.lang-btn {
+  background: transparent;
+  border: none;
+  color: #c5c5d0;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px 10px;
+  transition: color 0.2s;
+}
+
+.lang-btn:hover {
+  color: #fff;
+}
+
+.talk-btn {
+  border: 1px solid var(--border-bright);
+  background: rgba(255, 255, 255, 0.02);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+.talk-btn:hover {
+  background: #fff;
+  color: #070709;
+  border-color: #fff;
+}
+
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Hero Section - Matching the dark luxury mockup */
+.hero {
+  min-height: calc(100vh - 172px);
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 40px;
+  padding: 36px 0 48px;
+}
+
+.hero-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #8f8f9d;
+  margin-bottom: 22px;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(46px, 5.8vw, 78px);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: #f4f4f6;
+  margin-bottom: 24px;
+}
+
+[dir="rtl"] .hero h1 {
+  line-height: 1.16;
+  font-weight: 900;
+}
+
+.hero h1 .grad {
+  background: var(--grad-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.hero-desc {
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: #9898a4;
+  max-width: 470px;
+  margin-bottom: 36px;
+  font-weight: 400;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn-white {
+  background: #f4f4f6;
+  color: #070709;
+  padding: 14px 26px;
+  border-radius: 6px;
+  font-size: 13.5px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #f4f4f6;
+  transition: all 0.25s ease;
+}
+
+.btn-white:hover {
+  background: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(255, 255, 255, 0.14);
+}
+
+.btn-outline {
+  background: rgba(255, 255, 255, 0.02);
+  color: #e4e4ec;
+  padding: 14px 26px;
+  border-radius: 6px;
+  font-size: 13.5px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--border-bright);
+  transition: all 0.25s ease;
+}
+
+.btn-outline:hover {
+  border-color: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
+}
+
+/* 3D Metallic Chrome V Sculpture Stage */
+.hero-sculpture {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 460px;
+}
+
+.sculpture-glow {
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(145, 75, 255, 0.24) 0%, rgba(56, 217, 255, 0.12) 45%, transparent 72%);
+  filter: blur(42px);
+  pointer-events: none;
+}
+
+.sculpture-floor {
+  position: absolute;
+  bottom: 24px;
+  width: 310px;
+  height: 26px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(130, 95, 255, 0.28) 0%, rgba(0, 0, 0, 0.85) 65%, transparent 80%);
+  filter: blur(8px);
+}
+
+.v-sculpture-svg {
+  width: min(460px, 95%);
+  height: auto;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 28px 36px rgba(0, 0, 0, 0.85));
+  animation: hoverSculpture 7s ease-in-out infinite alternate;
+}
+
+@keyframes hoverSculpture {
+  0% { transform: translateY(0px) scale(1); }
+  100% { transform: translateY(-12px) scale(1.015); }
+}
+
+/* Bottom Trust / Capability Strip inside Hero */
+.hero-strip {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 22px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.strip-label {
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #6c6c78;
+  line-height: 1.45;
+  max-width: 140px;
+}
+
+.strip-items {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+  flex-wrap: wrap;
+}
+
+.strip-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 13px;
+  color: #b4b4c0;
+  font-weight: 500;
+}
+
+.strip-item i {
+  color: #7c7c8a;
+  font-size: 13px;
+}
+
+.strip-contacts {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+.strip-contacts a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: #a8a8b5;
+  transition: color 0.2s;
+}
+
+.strip-contacts a:hover {
+  color: #ffffff;
+}
+
+.strip-contacts a.wa-direct:hover {
+  color: #25d366;
+}
+
+/* Sections */
+section.block {
+  padding: 105px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.block-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 30px;
+  margin-bottom: 56px;
+  flex-wrap: wrap;
+}
+
+.kicker {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #7e7e8c;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.block-head h2 {
+  font-family: var(--font-display);
+  font-size: clamp(34px, 4.4vw, 54px);
+  font-weight: 700;
+  line-height: 1.05;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+
+[dir="rtl"] .block-head h2 {
+  line-height: 1.2;
+}
+
+.block-head p {
+  max-width: 360px;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* Services Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--border);
+  border-left: 1px solid var(--border);
+}
+
+[dir="rtl"] .services-grid {
+  border-left: none;
+  border-right: 1px solid var(--border);
+}
+
+.srv-card {
+  padding: 36px 28px;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.01);
+  transition: background 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 280px;
+}
+
+[dir="rtl"] .srv-card {
+  border-right: none;
+  border-left: 1px solid var(--border);
+}
+
+.srv-card:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.srv-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 44px;
+}
+
+.srv-num {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  color: #6b6b78;
+  font-weight: 600;
+}
+
+.srv-top i {
+  font-size: 18px;
+  background: var(--grad-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.srv-card h3 {
+  font-family: var(--font-display);
+  font-size: 24px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  letter-spacing: 0.01em;
+}
+
+.srv-card p {
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* Process Section */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.proc-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 32px 26px;
+  transition: border-color 0.25s, transform 0.25s;
+}
+
+.proc-item:hover {
+  border-color: rgba(155, 77, 255, 0.45);
+  transform: translateY(-4px);
+}
+
+.proc-step {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--cyan);
+  margin-bottom: 20px;
+  display: block;
+}
+
+.proc-item h3 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.proc-item p {
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* Portfolio Showcase */
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.work-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.work-card:hover {
+  border-color: var(--border-bright);
+  transform: translateY(-4px);
+}
+
+.work-preview {
+  height: 270px;
+  background: linear-gradient(145deg, #0d0e15 0%, #151726 100%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+  border-bottom: 1px solid var(--border);
+}
+
+.mock-browser {
+  width: 100%;
+  height: 100%;
+  background: #070709;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.mock-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.mock-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.mock-title {
+  font-family: var(--font-display);
+  font-size: 26px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.work-meta {
+  padding: 26px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.work-meta h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.work-meta p {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.work-tag {
+  font-size: 11px;
+  padding: 6px 12px;
+  border: 1px solid var(--border-bright);
+  border-radius: 4px;
+  color: #ccc;
+  white-space: nowrap;
+}
+
+/* Contact Section */
+.contact-wrap {
+  padding: 105px 0;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 56px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 56px;
+}
+
+.contact-info h2 {
+  font-family: var(--font-display);
+  font-size: clamp(34px, 4vw, 52px);
+  text-transform: uppercase;
+  line-height: 1.06;
+  margin-bottom: 18px;
+}
+
+[dir="rtl"] .contact-info h2 {
+  line-height: 1.22;
+}
+
+.contact-info p {
+  color: var(--muted);
+  font-size: 14.5px;
+  line-height: 1.75;
+  margin-bottom: 34px;
+  max-width: 440px;
+}
+
+.direct-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.direct-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 22px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  transition: all 0.25s ease;
+}
+
+.direct-btn:hover {
+  border-color: var(--border-bright);
+  background: rgba(255, 255, 255, 0.04);
+  transform: translateX(4px);
+}
+
+[dir="rtl"] .direct-btn:hover {
+  transform: translateX(-4px);
+}
+
+.direct-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.direct-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.direct-btn.wa .direct-icon {
+  background: rgba(37, 211, 102, 0.12);
+  color: #25d366;
+}
+
+.direct-btn.mail .direct-icon {
+  background: rgba(155, 77, 255, 0.14);
+  color: #b565ff;
+}
+
+.direct-left small {
+  display: block;
+  font-size: 11px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.direct-left strong {
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  direction: ltr;
+  display: inline-block;
+}
+
+.form-box {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.field label {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  background: #070709;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 14px 16px;
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--purple);
+}
+
+.form-btns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.submit-wa {
+  background: #25d366;
+  color: #05140a;
+  border: none;
+  padding: 14px 18px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.submit-wa:hover {
+  opacity: 0.92;
+  transform: translateY(-2px);
+}
+
+.submit-mail {
+  background: #f4f4f6;
+  color: #070709;
+  border: none;
+  padding: 14px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.submit-mail:hover {
+  background: #fff;
+  transform: translateY(-2px);
+}
+
+/* Floating WhatsApp Button */
+.wa-float {
+  position: fixed;
+  bottom: 26px;
+  right: 26px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #06180c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.35);
+  z-index: 90;
+  transition: transform 0.25s ease;
+}
+
+[dir="rtl"] .wa-float {
+  right: auto;
+  left: 26px;
+}
+
+.wa-float:hover {
+  transform: scale(1.08) translateY(-3px);
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 0;
+  font-size: 12px;
+  color: #747482;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Mobile Drawer */
+.drawer {
+  position: fixed;
+  inset: 0;
+  background: #070709;
+  z-index: 120;
+  padding: 32px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.drawer.open {
+  display: flex;
+}
+
+.drawer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  margin-top: 40px;
+}
+
+.drawer-links a {
+  font-family: var(--font-display);
+  font-size: 32px;
+  text-transform: uppercase;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: start;
+    padding-top: 20px;
+  }
+  .hero-sculpture {
+    min-height: 360px;
+  }
+  .services-grid,
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .contact-grid {
+    grid-template-columns: 1fr;
+    padding: 36px;
+  }
+}
+
+@media (max-width: 720px) {
+  .wrap {
+    width: calc(100% - 36px);
+  }
+  .nav,
+  .talk-btn {
+    display: none;
+  }
+  .menu-btn {
+    display: block;
+  }
+  .services-grid,
+  .process-grid,
+  .work-grid,
+  .form-btns {
+    grid-template-columns: 1fr;
+  }
+  .hero-strip {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .contact-grid {
+    padding: 26px 20px;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <!-- Header -->
+  <header>
+    <a class="brand" href="#">
+      <svg class="brand-icon" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="navV" x1="10" y1="15" x2="95" y2="85" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#b565ff"/>
+            <stop offset="50%" stop-color="#4f7cff"/>
+            <stop offset="100%" stop-color="#38d9ff"/>
+          </linearGradient>
+        </defs>
+        <path d="M18 18H40L57 54L74 18H96L66 82H48L18 18Z" fill="url(#navV)"/>
+        <path d="M14 56C25 74 88 70 98 42" stroke="url(#navV)" stroke-width="5.5" stroke-linecap="round"/>
+        <rect x="96" y="14" width="7" height="7" rx="1.5" fill="#4f7cff"/>
+        <rect x="106" y="21" width="6" height="6" rx="1.5" fill="#9b4dff"/>
+        <rect x="91" y="24" width="6" height="6" rx="1.5" fill="#38d9ff"/>
+      </svg>
+      <div class="brand-wordmark">
+        <strong>Vexora</strong>
+        <span>Studio</span>
+      </div>
+    </a>
+
+    <nav class="nav">
+      <a href="#services" data-en="Services" data-ar="خدماتنا">Services</a>
+      <a href="#process" data-en="Process" data-ar="منهجيتنا">Process</a>
+      <a href="#portfolio" data-en="Portfolio" data-ar="أعمالنا">Portfolio</a>
+      <a href="#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a>
+    </nav>
+
+    <div class="header-right">
+      <button class="lang-btn" id="langToggle">العربية</button>
+      <a class="talk-btn" href="https://wa.me/967733486043?text=مرحباً%20Vexora%20Studio،%20أرغب%20في%20البدء%20بمشروع%20موقع%20إلكتروني" target="_blank" rel="noopener" data-en="Let's Talk" data-ar="تحدث معنا">Let's Talk</a>
+      <button class="menu-btn" id="openDrawer" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer" id="mobileDrawer">
+    <div>
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <span style="font-weight:800;font-size:18px;">VEXORA STUDIO</span>
+        <button class="menu-btn" style="display:block;" id="closeDrawer"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="drawer-links">
+        <a href="#services" class="drawer-link" data-en="Services" data-ar="خدماتنا">Services</a>
+        <a href="#process" class="drawer-link" data-en="Process" data-ar="منهجيتنا">Process</a>
+        <a href="#portfolio" class="drawer-link" data-en="Portfolio" data-ar="أعمالنا">Portfolio</a>
+        <a href="#contact" class="drawer-link" data-en="Contact" data-ar="تواصل معنا">Contact</a>
+      </div>
+    </div>
+    <a href="https://wa.me/967733486043" target="_blank" rel="noopener" class="btn-white" style="justify-content:center;">
+      <i class="fa-brands fa-whatsapp"></i> +967 733 486 043
+    </a>
+  </div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="hero-eyebrow" data-en="INDEPENDENT DIGITAL STUDIO · STRATEGY · DESIGN · DEVELOPMENT" data-ar="استوديو رقمي مستقل · استراتيجية · تصميم · تطوير">
+          INDEPENDENT DIGITAL STUDIO · STRATEGY · DESIGN · DEVELOPMENT
+        </div>
+        <h1 data-en="WE BUILD WEBSITES<br>THAT <span class='grad'>GROW BUSINESSES.</span>" data-ar="نبني مواقع إلكترونية<br><span class='grad'>تُنمّي أعمالك.</span>">
+          WE BUILD WEBSITES<br>THAT <span class="grad">GROW BUSINESSES.</span>
+        </h1>
+        <p class="hero-desc" data-en="We create refined, high-impact digital experiences and bespoke websites for ambitious brands that want to stand out, earn trust, and convert visitors." data-ar="نبتكر تجارب رقمية راقية ومواقع إلكترونية مصممة خصيصاً للعلامات الطموحة التي تسعى للتميّز، وبناء الثقة، وتحويل الزوار إلى عملاء.">
+          We create refined, high-impact digital experiences and bespoke websites for ambitious brands that want to stand out, earn trust, and convert visitors.
+        </p>
+        <div class="hero-actions">
+          <a class="btn-white" href="https://wa.me/967733486043?text=مرحباً%20Vexora%20Studio،%20أرغب%20في%20الاستفسار%20عن%20تصميم%20موقع%20إلكتروني" target="_blank" rel="noopener">
+            <span data-en="Start a Project" data-ar="ابدأ مشروعك">Start a Project</span> <span>→</span>
+          </a>
+          <a class="btn-outline" href="#services" data-en="Explore Services" data-ar="استكشف خدماتنا">
+            Explore Services
+          </a>
+        </div>
+      </div>
+
+      <!-- 3D Chrome Metallic V Sculpture matching the mockup -->
+      <div class="hero-sculpture" aria-hidden="true">
+        <div class="sculpture-glow"></div>
+        <div class="sculpture-floor"></div>
+        <svg class="v-sculpture-svg" viewBox="0 0 520 440" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <!-- Chrome dark metallic body gradient -->
+            <linearGradient id="chromeLeft" x1="110" y1="70" x2="250" y2="340" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#d8b4fe"/>
+              <stop offset="18%" stop-color="#6c5ce7"/>
+              <stop offset="48%" stop-color="#14151f"/>
+              <stop offset="78%" stop-color="#3b4269"/>
+              <stop offset="100%" stop-color="#0b0c12"/>
+            </linearGradient>
+            <linearGradient id="chromeRight" x1="395" y1="65" x2="225" y2="355" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#7ce8ff"/>
+              <stop offset="22%" stop-color="#3b82f6"/>
+              <stop offset="52%" stop-color="#11131d"/>
+              <stop offset="80%" stop-color="#6366f1"/>
+              <stop offset="100%" stop-color="#1e1b4b"/>
+            </linearGradient>
+            <linearGradient id="chromeRim" x1="90" y1="65" x2="415" y2="350" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#f3e8ff"/>
+              <stop offset="35%" stop-color="#818cf8"/>
+              <stop offset="70%" stop-color="#38bdf8"/>
+              <stop offset="100%" stop-color="#e0f2fe"/>
+            </linearGradient>
+            <linearGradient id="orbitMetal" x1="75" y1="265" x2="435" y2="145" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#c084fc"/>
+              <stop offset="30%" stop-color="#1e1b4b"/>
+              <stop offset="65%" stop-color="#60a5fa"/>
+              <stop offset="100%" stop-color="#67e8f9"/>
+            </linearGradient>
+            <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="6" result="blur"/>
+              <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+            </filter>
+          </defs>
+
+          <!-- Back half of orbital ring -->
+          <path d="M125 225 C140 165, 345 120, 412 152" stroke="url(#orbitMetal)" stroke-width="11" stroke-linecap="round" opacity="0.55"/>
+
+          <!-- Left 3D Metallic Arm of V -->
+          <path d="M108 72 L182 72 L262 246 L226 338 L108 72 Z" fill="url(#chromeLeft)" stroke="url(#chromeRim)" stroke-width="2.2" stroke-linejoin="round"/>
+          <!-- Inner bevel highlight left -->
+          <path d="M122 80 L176 80 L248 238 L224 295 Z" fill="rgba(255,255,255,0.06)"/>
+
+          <!-- Right 3D Metallic Arm of V -->
+          <path d="M326 72 L404 72 L278 348 L216 348 L326 72 Z" fill="url(#chromeRight)" stroke="url(#chromeRim)" stroke-width="2.2" stroke-linejoin="round"/>
+          <!-- Specular chrome streak right -->
+          <path d="M336 82 L386 82 L270 334 L235 334 Z" fill="rgba(125, 211, 252, 0.12)"/>
+
+          <!-- Front sweeping metallic orbital swoosh -->
+          <path d="M124 224 C92 272, 178 302, 294 260 C388 226, 444 176, 412 152" stroke="url(#orbitMetal)" stroke-width="15" stroke-linecap="round" fill="none" filter="url(#softGlow)"/>
+          <path d="M124 224 C92 272, 178 302, 294 260 C388 226, 444 176, 412 152" stroke="#e0f2fe" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.7"/>
+
+          <!-- Floating 3D Digital Pixels -->
+          <rect x="415" y="64" width="16" height="16" rx="3" fill="url(#chromeRight)" stroke="#bae6fd" stroke-width="1.2"/>
+          <rect x="442" y="84" width="14" height="14" rx="2.5" fill="url(#chromeLeft)" stroke="#e9d5ff" stroke-width="1.2"/>
+          <rect x="404" y="96" width="12" height="12" rx="2" fill="#38bdf8" opacity="0.85"/>
+          <rect x="86" y="182" width="11" height="11" rx="2" fill="#a855f7" opacity="0.75"/>
+          <rect x="424" y="248" width="12" height="12" rx="2" fill="#60a5fa" opacity="0.75"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Bottom Capability & Direct Contact Bar -->
+    <div class="hero-strip">
+      <div class="strip-label" data-en="CORE DIGITAL<br>CAPABILITIES:" data-ar="قدراتنا الرقمية<br>الأساسية:">
+        CORE DIGITAL<br>CAPABILITIES:
+      </div>
+
+      <div class="strip-items">
+        <div class="strip-item"><i class="fa-regular fa-window-maximize"></i> <span data-en="Web Development" data-ar="تطوير المواقع">Web Development</span></div>
+        <div class="strip-item"><i class="fa-solid fa-pen-nib"></i> <span data-en="UI/UX Design" data-ar="تصميم الواجهات">UI/UX Design</span></div>
+        <div class="strip-item"><i class="fa-solid fa-bag-shopping"></i> <span data-en="E-Commerce" data-ar="المتاجر الإلكترونية">E-Commerce</span></div>
+        <div class="strip-item"><i class="fa-solid fa-chart-line"></i> <span data-en="SEO & Growth" data-ar="تحسين محركات البحث">SEO & Growth</span></div>
+      </div>
+
+      <div class="strip-contacts">
+        <a href="mailto:aleizaldobei@gmail.com"><i class="fa-regular fa-envelope"></i> aleizaldobei@gmail.com</a>
+        <a href="https://wa.me/967733486043" target="_blank" rel="noopener" class="wa-direct"><i class="fa-brands fa-whatsapp"></i> +967 733 486 043</a>
+      </div>
+    </div>
+
+    <!-- Services -->
+    <section class="block" id="services">
+      <div class="block-head">
+        <div>
+          <span class="kicker" data-en="01 / WHAT WE DO" data-ar="01 / خدماتنا">01 / WHAT WE DO</span>
+          <h2 data-en="DIGITAL THAT<br>WORKS HARDER." data-ar="حلول رقمية<br>تعمل بذكاء.">DIGITAL THAT<br>WORKS HARDER.</h2>
+        </div>
+        <p data-en="Every element is engineered with purpose—combining luxury aesthetics, speed, and clear conversion strategy." data-ar="كل عنصر مصمم لهدف محدد—يجمع بين الفخامة البصرية، السرعة الفائقة، واستراتيجية واضحة لجذب العملاء.">
+          Every element is engineered with purpose—combining luxury aesthetics, speed, and clear conversion strategy.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <article class="srv-card">
+          <div class="srv-top">
+            <span class="srv-num">01</span>
+            <i class="fa-solid fa-code"></i>
+          </div>
+          <div>
+            <h3 data-en="Web Development" data-ar="تطوير المواقع">Web Development</h3>
+            <p data-en="Clean, ultra-fast websites built for seamless performance across all mobile, tablet, and desktop devices." data-ar="مواقع سريعة ونظيفة برمجياً تعمل بسلاسة مثالية على الهواتف والأجهزة اللوحية والحواسيب.">Clean, ultra-fast websites built for seamless performance across all mobile, tablet, and desktop devices.</p>
+          </div>
+        </article>
+
+        <article class="srv-card">
+          <div class="srv-top">
+            <span class="srv-num">02</span>
+            <i class="fa-solid fa-layer-group"></i>
+          </div>
+          <div>
+            <h3 data-en="UI/UX Design" data-ar="تصميم UI/UX">UI/UX Design</h3>
+            <p data-en="Distinctive dark & luxury interfaces tailored around your brand identity and customer journey." data-ar="واجهات عصرية وفخمة تُصمم خصيصاً لتعكس هوية علامتك وتسهل رحلة العميل.">Distinctive dark & luxury interfaces tailored around your brand identity and customer journey.</p>
+          </div>
+        </article>
+
+        <article class="srv-card">
+          <div class="srv-top">
+            <span class="srv-num">03</span>
+            <i class="fa-solid fa-cart-shopping"></i>
+          </div>
+          <div>
+            <h3 data-en="E-Commerce" data-ar="المتاجر الإلكترونية">E-Commerce</h3>
+            <p data-en="High-converting online stores with smooth checkout flows and direct WhatsApp ordering integration." data-ar="متاجر إلكترونية عالية التحويل مع تجربة شراء سلسة وربط مباشر للطلب عبر الواتساب.">High-converting online stores with smooth checkout flows and direct WhatsApp ordering integration.</p>
+          </div>
+        </article>
+
+        <article class="srv-card">
+          <div class="srv-top">
+            <span class="srv-num">04</span>
+            <i class="fa-solid fa-arrow-trend-up"></i>
+          </div>
+          <div>
+            <h3 data-en="SEO & Growth" data-ar="SEO والنمو الرقمي">SEO & Growth</h3>
+            <p data-en="Technical search optimization and performance tuning to help your brand rank higher and win more leads." data-ar="تهيئة تقنية لمحركات البحث وتحسين الأداء لمساعدة علامتك على الظهور في النتائج الأولى.">Technical search optimization and performance tuning to help your brand rank higher and win more leads.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="block" id="process">
+      <div class="block-head">
+        <div>
+          <span class="kicker" data-en="02 / HOW WE WORK" data-ar="02 / منهجية العمل">02 / HOW WE WORK</span>
+          <h2 data-en="A CLEAR PROCESS.<br>NO GUESSWORK." data-ar="خطوات واضحة.<br>بلا عشوائية.">A CLEAR PROCESS.<br>NO GUESSWORK.</h2>
+        </div>
+        <p data-en="From initial strategy to final launch, we keep communication direct, transparent, and focused on results." data-ar="من التخطيط الأولي حتى الإطلاق النهائي، نحافظ على تواصل مباشر وشفاف يركز على النتائج.">
+          From initial strategy to final launch, we keep communication direct, transparent, and focused on results.
+        </p>
+      </div>
+
+      <div class="process-grid">
+        <div class="proc-item">
+          <span class="proc-step">01 / DISCOVER</span>
+          <h3 data-en="Strategy" data-ar="الاستراتيجية">Strategy</h3>
+          <p data-en="We analyze your goals, target audience, and competitors to define the strongest digital direction." data-ar="نحلل أهدافك وجمهورك المستهدف ومنافسيك لتحديد أقوى مسار رقمي لمشروعك.">We analyze your goals, target audience, and competitors to define the strongest digital direction.</p>
+        </div>
+
+        <div class="proc-item">
+          <span class="proc-step">02 / DESIGN</span>
+          <h3 data-en="Visual Craft" data-ar="التصميم البصري">Visual Craft</h3>
+          <p data-en="We design a refined, memorable interface that elevates your brand above noisy competitors." data-ar="نصمم واجهة راقية ولا تُنسى ترفع مستوى علامتك التجارية فوق المنافسين.">We design a refined, memorable interface that elevates your brand above noisy competitors.</p>
+        </div>
+
+        <div class="proc-item">
+          <span class="proc-step">03 / BUILD</span>
+          <h3 data-en="Development" data-ar="التطوير والبرمجة">Development</h3>
+          <p data-en="We code responsive, high-speed pages with clean architecture and instant contact integrations." data-ar="نبرمج صفحات سريعة ومتجاوبة بهيكلية نظيفة مع ربط فوري لوسائل التواصل.">We code responsive, high-speed pages with clean architecture and instant contact integrations.</p>
+        </div>
+
+        <div class="proc-item">
+          <span class="proc-step">04 / LAUNCH</span>
+          <h3 data-en="Go Live" data-ar="الإطلاق">Go Live</h3>
+          <p data-en="Thorough testing across devices followed by smooth deployment and dedicated technical support." data-ar="اختبار شامل على كافة الأجهزة يليه إطلاق سلس ودعم فني متواصل.">Thorough testing across devices followed by smooth deployment and dedicated technical support.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section class="block" id="portfolio">
+      <div class="block-head">
+        <div>
+          <span class="kicker" data-en="03 / SELECTED WORK" data-ar="03 / أعمال مختارة">03 / SELECTED WORK</span>
+          <h2 data-en="BUILT FOR<br>MODERN BRANDS." data-ar="مواقع صُممت<br>لعلامات عصرية.">BUILT FOR<br>MODERN BRANDS.</h2>
+        </div>
+        <p data-en="A glimpse into the visual precision and dark luxury aesthetic we bring to every client project." data-ar="لمحة عن الدقة البصرية والطابع الفاخر الذي نقدمه في كل مشروع لعملائنا.">
+          A glimpse into the visual precision and dark luxury aesthetic we bring to every client project.
+        </p>
+      </div>
+
+      <div class="work-grid">
+        <article class="work-card">
+          <div class="work-preview">
+            <div class="mock-browser">
+              <div class="mock-dots"><span></span><span></span><span></span></div>
+              <div class="mock-title" style="background:var(--grad-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">APEX FINTECH</div>
+              <div style="font-size:11px;color:#6e6e7a;">NEXT-GEN FINANCIAL ARCHITECTURE</div>
+            </div>
+          </div>
+          <div class="work-meta">
+            <div>
+              <h3 data-en="Apex Corporate Platform" data-ar="منصة أبيكس للشركات">Apex Corporate Platform</h3>
+              <p data-en="Luxury corporate web presence & interactive UI" data-ar="واجهة شركات فاخرة وتجربة مستخدم تفاعلية">Luxury corporate web presence & interactive UI</p>
+            </div>
+            <span class="work-tag">Web Design</span>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <div class="work-preview">
+            <div class="mock-browser">
+              <div class="mock-dots"><span></span><span></span><span></span></div>
+              <div class="mock-title" style="color:#f4f4f6;">NOIR ATELIER</div>
+              <div style="font-size:11px;color:#6e6e7a;">BESPOKE LUXURY COMMERCE</div>
+            </div>
+          </div>
+          <div class="work-meta">
+            <div>
+              <h3 data-en="Noir Luxury Storefront" data-ar="متجر نوار الفاخر">Noir Luxury Storefront</h3>
+              <p data-en="High-speed catalog & direct WhatsApp checkout" data-ar="كتالوج سريع وطلب مباشر عبر الواتساب">High-speed catalog & direct WhatsApp checkout</p>
+            </div>
+            <span class="work-tag">E-Commerce</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-wrap" id="contact">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <span class="kicker" data-en="04 / GET IN TOUCH" data-ar="04 / تواصل معنا">04 / GET IN TOUCH</span>
+          <h2 data-en="LET'S BUILD<br>YOUR WEBSITE." data-ar="لنبدأ ببناء<br>موقعك الآن.">LET'S BUILD<br>YOUR WEBSITE.</h2>
+          <p data-en="Click directly to chat on WhatsApp or send an email. We respond quickly and help you turn your idea into a standout website." data-ar="اضغط مباشرة للتواصل الفوري عبر الواتساب أو أرسل رسالة عبر البريد الإلكتروني. نرد بسرعة ونساعدك على تحويل فكرتك إلى موقع احترافي.">
+            Click directly to chat on WhatsApp or send an email. We respond quickly and help you turn your idea into a standout website.
+          </p>
+
+          <div class="direct-cards">
+            <a class="direct-btn wa" href="https://wa.me/967733486043?text=مرحباً%20Vexora%20Studio،%20أرغب%20في%20الاستفسار%20عن%20خدماتكم" target="_blank" rel="noopener">
+              <div class="direct-left">
+                <div class="direct-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                <div>
+                  <small data-en="Instant WhatsApp Chat" data-ar="محادثة واتساب مباشرة">Instant WhatsApp Chat</small>
+                  <strong>+967 733 486 043</strong>
+                </div>
+              </div>
+              <span>↗</span>
+            </a>
+
+            <a class="direct-btn mail" href="mailto:aleizaldobei@gmail.com?subject=Project%20Inquiry%20-%20Vexora%20Studio">
+              <div class="direct-left">
+                <div class="direct-icon"><i class="fa-regular fa-envelope"></i></div>
+                <div>
+                  <small data-en="Direct Email" data-ar="البريد الإلكتروني">Direct Email</small>
+                  <strong>aleizaldobei@gmail.com</strong>
+                </div>
+              </div>
+              <span>↗</span>
+            </a>
+          </div>
+        </div>
+
+        <form class="form-box" id="projectForm">
+          <div class="field">
+            <label data-en="Your Name" data-ar="الاسم">Your Name</label>
+            <input type="text" id="clientName" placeholder="Ahmed / Sara" required>
+          </div>
+          <div class="field">
+            <label data-en="Project Type" data-ar="نوع المشروع">Project Type</label>
+            <input type="text" id="projectType" placeholder="Company Website / Online Store / Portfolio" required>
+          </div>
+          <div class="field">
+            <label data-en="Project Details" data-ar="تفاصيل المشروع">Project Details</label>
+            <textarea id="projectNotes" rows="3" placeholder="Tell us briefly what you need..." required></textarea>
+          </div>
+          <div class="form-btns">
+            <button type="button" class="submit-wa" id="sendWaBtn">
+              <i class="fa-brands fa-whatsapp"></i> <span data-en="Send via WhatsApp" data-ar="إرسال عبر واتساب">Send via WhatsApp</span>
+            </button>
+            <button type="submit" class="submit-mail">
+              <i class="fa-regular fa-envelope"></i> <span data-en="Send via Email" data-ar="إرسال عبر البريد">Send via Email</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <span>© 2026 VEXORA STUDIO. ALL RIGHTS RESERVED.</span>
+    <span>aleizaldobei@gmail.com · +967 733 486 043</span>
+    <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" data-en="BACK TO TOP ↑" data-ar="العودة للأعلى ↑">BACK TO TOP ↑</a>
+  </footer>
+</div>
+
+<!-- Floating Direct WhatsApp Button -->
+<a class="wa-float" href="https://wa.me/967733486043?text=مرحباً%20Vexora%20Studio،%20أرغب%20في%20التواصل%20معكم" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<script>
+// Bilingual Toggle (EN / AR)
+const langToggle = document.getElementById('langToggle');
+let currentLang = 'en';
+
+langToggle.addEventListener('click', () => {
+  currentLang = currentLang === 'en' ? 'ar' : 'en';
+  document.documentElement.lang = currentLang;
+  document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+  
+  document.querySelectorAll('[data-en]').forEach(el => {
+    el.innerHTML = el.getAttribute('data-' + currentLang);
+  });
+  
+  langToggle.textContent = currentLang === 'en' ? 'العربية' : 'English';
+});
+
+// Mobile Drawer
+const drawer = document.getElementById('mobileDrawer');
+document.getElementById('openDrawer').addEventListener('click', () => drawer.classList.add('open'));
+document.getElementById('closeDrawer').addEventListener('click', () => drawer.classList.remove('open'));
+document.querySelectorAll('.drawer-link').forEach(link => {
+  link.addEventListener('click', () => drawer.classList.remove('open'));
+});
+
+// Direct WhatsApp Submission from Form
+document.getElementById('sendWaBtn').addEventListener('click', () => {
+  const name = document.getElementById('clientName').value.trim();
+  const type = document.getElementById('projectType').value.trim();
+  const notes = document.getElementById('projectNotes').value.trim();
+  
+  let text = 'مرحباً Vexora Studio، أرغب في طلب مشروع جديد:%0A';
+  if (name) text += `الاسم: ${encodeURIComponent(name)}%0A`;
+  if (type) text += `نوع المشروع: ${encodeURIComponent(type)}%0A`;
+  if (notes) text += `التفاصيل: ${encodeURIComponent(notes)}`;
+  
+  window.open(`https://wa.me/967733486043?text=${text}`, '_blank');
+});
+
+// Direct Email Submission from Form
+document.getElementById('projectForm').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const name = document.getElementById('clientName').value.trim();
+  const type = document.getElementById('projectType').value.trim();
+  const notes = document.getElementById('projectNotes').value.trim();
+  
+  const subject = encodeURIComponent(`New Project Inquiry (${type}) - Vexora Studio`);
+  const body = encodeURIComponent(`Name: ${name}
+Project Type: ${type}
+
+Details:
+${notes}`);
+  
+  window.location.href = `mailto:aleizaldobei@gmail.com?subject=${subject}&body=${body}`;
+});
+</script>
+</body>
+</html>
